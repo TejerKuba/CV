@@ -46,3 +46,16 @@ function fixNav () {
     nav.classList.remove('active')
   }
 }
+
+// Panel switcher
+
+const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+  panel.addEventListener('click', ()=>{
+    for(let i = 0; i < panels.length; i++) {
+      panels[i].classList.remove('active')
+    }
+    panel.classList.toggle('active')
+  })
+})

@@ -22,11 +22,12 @@ body{
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
   margin: 0;
+  font-size: 0.8rem;
 }
-
 
 .page-wrapper {
   height: 100vh;
@@ -41,6 +42,7 @@ body{
   left: 20%;
   transform: translate(-50%, -25%) scale(1.2);
   z-index: 0;
+  width: 10%;
 }
 
 .cloud-img.second{
@@ -50,6 +52,7 @@ body{
   left: 75%;
   transform: translate(-50%, -25%) scale(1.7);
   z-index: 0;
+  width: 10%;
 }
 
 .mountain-img {
@@ -59,6 +62,7 @@ body{
    left: 50%;
    transform: translate(-50%, -10%) scale(1.5, 1.2);
    z-index: 0;
+   width: 40%;
   }
 
 .header {
@@ -96,6 +100,7 @@ body{
   width: 90%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  z-index: 100;
 }
 
 .nav .container{
@@ -143,7 +148,7 @@ body{
  width: 100%;
  align-items: center;
  justify-content: center;
- height: 100vh;
+ margin: 50px auto;
 }
 
 .service-box{
@@ -260,3 +265,77 @@ body{
   80%{transform: translate(10px, -10px)}
   100%{transform: translate(0px, 0px)}
 }
+
+
+/* Abilities box */
+
+.abilities {
+  text-align: center;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  width: 60%;
+  padding: 20px 10px;
+}
+
+.abilities .panel-wrapper{
+  width: 100%;  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.abilities .panel{
+  flex: 1;
+  background-color: rgba(255, 255, 255);
+  border-radius: 20px;
+  height: 100px;
+  margin: 10px 5px;
+  transition: flex 0.5s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.panel .logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.abilities .panel .abilities-name{
+  margin: 5px auto;
+  font-size: 0.5rem;
+}
+
+.abilities .panel.active{
+  flex: 5;
+}
+
+.abilities-logo{
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.panel .logo-description {
+  display: none;
+  font-size: 0.6rem;
+  margin: 5px;
+}
+
+.panel.active .logo-description{
+  display: block;
+  animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
